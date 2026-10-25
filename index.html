@@ -12,18 +12,22 @@
     /* ===== ТВОЙ НОВЫЙ ЧЁРНО-ОРАНЖЕВЫЙ ДИЗАЙН ===== */
     * { box-sizing: border-box; }
 
-    body {
-      margin: 0;
-      font-family: "Manrope", system-ui, sans-serif;
-      font-size: 18px;
-      line-height: 1.7;
-      color: #ededed;
-      background:
-        radial-gradient(circle at 12% 0%, rgba(255, 140, 0, 0.16), transparent 45%),
-        radial-gradient(circle at 88% 100%, rgba(255, 200, 0, 0.10), transparent 50%),
-        #0a0a0a;
-      min-height: 100vh;
-    }
+   body {
+    margin: 0;
+    font-family: "Manrope", system-ui, sans-serif;
+    font-size: 18px;
+    line-height: 1.7;
+    color: #ededed;
+
+    /* Настройка фона */
+    background-color: #111; 
+    background-image: url('IMG_20261021_125524.jpg'); 
+    background-repeat: no-repeat;
+    background-position: center center;
+    background-size: cover; /* ВОТ ЭТА СТРОЧКА СДЕЛАЕТ ЕЁ БОЛЬШИМ ФОНОМ */
+    background-attachment: fixed;
+}
+        
 
     h1, h2, h3 { font-weight: 800; line-height: 1.2; margin: 0 0 16px; }
 
@@ -183,7 +187,7 @@
 
     <!-- Главный экран -->
     <section id="home" class="hero">
-        <img src="IMG_20261021_125524.jpg" alt="Мое фото" style="width: 150px; height: 150px; border-radius: 50%; object-fit: cover; margin-bottom: 1rem;">
+       
         <h1></h1>
         <p>
             </p>
