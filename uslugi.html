@@ -7,18 +7,19 @@
     <style>
         /* Копируем твои базовые стили, чтобы дизайн совпадал */
         * { box-sizing: border-box; }
-      body { 
-    margin: 0; 
-    font-family: "Manrope", sans-serif; 
-    color: #ededed; 
-    
-    /* Настройки фона */
-    background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url(IMG_555.jpg);
-    background-size: 60%;       /* Растягивает картинку на весь экран */
-    background-position: center;  /* Центрирует картинку */
-    background-attachment: fixed; /* Картинка не прокручивается, а стоит на месте */
-    background-color: #121212;    /* Темный фон на случай, если картинка не загрузится */
-}
+      body {
+            margin: 0;
+            font-family: "Manrope", sans-serif;
+            color: #ededed;
+
+            /* Настройки фона */
+            background-image: linear-gradient(rgba(18, 18, 18, 0.85), rgba(18, 18, 18, 0.85)), url('IMG_555.jpg');
+            background-size: 60%;             /* Твой размер */
+            background-repeat: no-repeat;     /* Вот эта строчка запретит картинке повторяться! */
+            background-position: center;      /* Ставит картинку ровно по центру */
+            background-attachment: fixed;     /* Картинка не прокручивается */
+            background-color: #121212;
+        }
         h1, h2, h3 { font-weight: 800; }
         h1 { font-size: 2.6rem; background: linear-gradient(90deg, #ff8c00, #ffcc00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
         .container { margin: 24px auto; max-width: 800px; padding: 0 20px; }
