@@ -122,9 +122,43 @@
       .container { margin: 24px auto; }
       .card { padding: 20px; }
     }
-  </style>
+ /* Стили для верхнего меню */
+    .navbar {
+        background-color: #111; /* Темный фон */
+        padding: 15px 0;
+        text-align: center;
+        border-bottom: 2px solid #ff8c00; /* Оранжевая полоска снизу */
+    }
+    .navbar ul {
+        list-style: none;
+        margin: 0;
+        padding: 0;
+        display: flex;
+        justify-content: center;
+        gap: 30px;
+    }
+    .navbar a {
+        color: #fff;
+        text-decoration: none;
+        font-size: 16px;
+        font-weight: bold;
+        text-transform: uppercase;
+        transition: color 0.3s;
+    }
+    .navbar a:hover {
+        color: #ff8c00; /* Оранжевый при наведении */
+    } </style>
 </head>
 <body>
+    <!-- Меню сайта -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="uslugi.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
   <div class="container">
 
     <div class="badge">⚡ Электрика везде</div>
