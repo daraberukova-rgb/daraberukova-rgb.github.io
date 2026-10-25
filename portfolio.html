@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио - Электрика везде</title>
+    <style>
+        /* Те же базовые стили и меню */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: "Manrope", sans-serif; color: #ededed; background: radial-gradient(circle at 12% 0%, rgba(255,140,0,0.15), transparent 40%), #0a0a0a; min-height: 100vh; }
+        .container { margin: 24px auto; max-width: 800px; padding: 0 20px; }
+        h1 { font-size: 2.6rem; background: linear-gradient(90deg, #ff8c00, #ffcc00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .card { padding: 20px; background: #1a1a1a; border-left: 4px solid #ff8c00; border-radius: 8px; margin-bottom: 20px; }
+        .navbar { background-color: #111; padding: 15px 0; text-align: center; border-bottom: 2px solid #ff8c00; }
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; }
+        .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 16px; }
+        .navbar a:hover { color: #ff8c00; }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="uslugi.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Портфолио</h1>
+        <p>Примеры наших выполненных работ.</p>
+        
+        <div class="card">
+            <h2 style="margin-top:0; color:#ff8c00;">Квартира под ключ</h2>
+            <p>Полная разводка электрики в двухкомнатной квартире. 45 розеток, 12 выключателей.</p>
+        </div>
+        <div class="card">
+            <h2 style="margin-top:0; color:#ff8c00;">Частный дом</h2>
+            <p>Монтаж вводного щита и уличного освещения.</p>
+        </div>
+    </div>
+</body>
+</html>
