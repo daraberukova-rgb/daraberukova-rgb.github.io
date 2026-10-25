@@ -4,160 +4,98 @@
     <meta charset="UTF-8">
     <title>Портфолио - Электрика везде</title>
     <style>
-        /* Те же базовые стили и меню */
+        /* Базовые стили */
         * { box-sizing: border-box; }
-        body { margin: 0; font-family: "Manrope", sans-serif; color: #ededed; background: radial-gradient(circle at 12% 0%, rgba(255,140,0,0.15), transparent 40%), #0a0a0a; min-height: 100vh; }
+        body { margin: 0; font-family: "Manrope", sans-serif; color: #ededed; background: radial-gradient(circle at 12% 0%, #2a2a2a, #121212); min-height: 100vh; }
         .container { margin: 24px auto; max-width: 800px; padding: 0 20px; }
-       /* Стили для заголовка H1 (Портфолио) */
-            h1 {
-                font-size: 3.5rem;
-                font-weight: 900;
-                text-transform: uppercase;
-                letter-spacing: 3px;
-                margin-bottom: 10px;
-                position: relative;
-                display: inline-block;
-                background: linear-gradient(90deg, #ff8c00, #ffcc00, #ff8c00);
-                -webkit-background-clip: text;
-                -webkit-text-fill-color: transparent;
-                filter: drop-shadow(0px 5px 15px rgba(255, 140, 0, 0.4));
-            }
+        
+        /* Стили для заголовка H1 */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, #ff8c00, #ffcc00, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 5px 15px rgba(255, 140, 0, 0.4));
+        }
 
-            /* Декоративная полоска под заголовком */
-            h1::after {
-                content: "";
-                display: block;
-                width: 80px;
-                height: 5px;
-                background: #ff8c00;
-                margin-top: 15px;
-                border-radius: 5px;
-                box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
-            }
+        /* Декоративная полоска под заголовком */
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: #ff8c00;
+            margin-top: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
 
-            /* Стили для текста "Примеры наших выполненных работ" (в виде плашки) */
-            .container > p {
-                font-size: 1.1rem;
-                color: #b0b0b0;
-                margin-top: 10px;
-                margin-bottom: 40px;
-                display: inline-block;
-                background: rgba(255, 140, 0, 0.1);
-                border: 1px solid rgba(255, 140, 0, 0.3);
-                padding: 10px 20px;
-                border-radius: 30px;
-            
-        .card { padding: 20px; background: #1a1a1a; border-left: 4px solid #ff8c00; border-radius: 8px; margin-bottom: 20px; }
+        /* Плашка под заголовком */
+        .container > p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            display: inline-block;
+            background: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
+
+        /* Меню */
         .navbar { background-color: #111; padding: 15px 0; text-align: center; border-bottom: 2px solid #ff8c00; }
-        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; }
-        .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 16px; }
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 20px; }
+        .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; }
         .navbar a:hover { color: #ff8c00; }
-       /* Сетка для портфолио */
-.portfolio-grid {
-    display: grid;
-    grid-template-columns: repeat(3, 1fr); /* ВОТ ЭТА СТРОЧКА ДЕЛАЕТ ПО 3 В РЯД */
-    gap: 15px; /* Расстояние между фото */
-    margin-top: 20px;
-}
 
-/* Чтобы на телефонах и планшетах фото не были слишком мелкими, добавим адаптив */
-@media (max-width: 768px) {
-    .portfolio-grid {
-        grid-template-columns: repeat(2, 1fr); /* На планшетах по 2 */
-    }
-}
-@media (max-width: 480px) {
-    .portfolio-grid {
-        grid-template-columns: 1fr; /* На телефонах по 1 */
-    }
-}
+        /* --- СЕТКА И КАРТОЧКИ --- */
+        .portfolio-grid {
+            display: grid !important; 
+            grid-template-columns: repeat(3, 1fr) !important; 
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-/* Карточка одной работы */
-.portfolio-item {
-    background: #1a1a1a;
-    border-radius: 12px; 
-    overflow: hidden;
-    position: relative; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Тень в обычном состоянии */
-}
+        .portfolio-item {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
 
-/* Эффект при наведении мышки на карточку */
-.portfolio-item:hover {
-    transform: translateY(-8px); /* Карточка красиво подпрыгивает вверх */
-    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4); /* Появляется оранжевое неоновое свечение */
-}
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4);
+        }
 
-/* Картинка внутри */
-.portfolio-item img {
-    width: 100%;
-    aspect-ratio: 4 / 3; 
-    object-fit: cover; 
-    display: block;
-    transition: transform 0.5s ease; /* Плавный зум картинки */
-}
+        .portfolio-item img {
+            width: 100% !important; 
+            aspect-ratio: 4 / 3 !important; 
+            object-fit: cover !important; 
+            display: block;
+            transition: transform 0.5s ease;
+        }
 
-/* Увеличение картинки при наведении на карточку */
-.portfolio-item:hover img {
-    transform: scale(1.08); /* Картинка внутри чуть п
-
-
-
-
-
-.portfolio-info p {
-    margin: 0;
-    font-size: 0.9rem;
-    color: #ccc;
-    line-height: 1.4;
-}
-    /* --- ПОЛНЫЙ КОД СЕТКИ И КАРТОЧЕК --- */
-    
-    /* Сетка для портфолио */
-    .portfolio-grid {
-        display: grid !important; /* !important заставит браузер точно это применить */
-        grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки */
-        gap: 15px;
-        margin-top: 20px;
-    }
-
-    /* Карточка одной работы */
-    .portfolio-item {
-        background: #1a1a1a;
-        border-radius: 12px;
-        overflow: hidden;
-        position: relative;
-        transition: all 0.4s ease;
-        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
-    }
-
-    /* Эффект при наведении */
-    .portfolio-item:hover {
-        transform: translateY(-8px);
-        box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4);
-    }
-
-    /* Ограничиваем размер самой картинки */
-    .portfolio-item img {
-        width: 100% !important; 
-        aspect-ratio: 4 / 3 !important; /* Принудительно делаем прямоугольной */
-        object-fit: cover !important; /* Обрезаем лишнее */
-        display: block;
-        transition: transform 0.5s ease;
-    }
-
-    /* Увеличение картинки при наведении */
-    .portfolio-item:hover img {
-        transform: scale(1.08);
-    }
-    
-    /* Адаптив для телефонов (чтобы на маленьком экране было 1 или 2 фото) */
-    @media (max-width: 768px) {
-        .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
-    }
-    @media (max-width: 480px) {
-        .portfolio-grid { grid-template-columns: 1fr !important; }
-    }
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+            .portfolio-grid { grid-template-columns: 1fr !important; }
+        }
     </style>
 </head>
 <body>
@@ -174,58 +112,128 @@
         <h1>Портфолио</h1>
         <p>Примеры наших выполненных работ.</p>
 
-       <!-- Начало сетки портфолио -->
         <div class="portfolio-grid">
-            
             <!-- Фото 1 -->
-            <div class="portfolio-item">
-                <img src="IMG_123.jpg" alt="Работа 1">
-            </div>
-
+            <div class="portfolio-item"><img src="IMG_123.jpg" alt="Работа 1"></div>
             <!-- Фото 2 -->
-            <div class="portfolio-item">
-                <img src="IMG_456.jpg" alt="Работа 2">
-            </div>
+            <div class="portfolio-ite<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Портфолио - Электрика везде</title>
+    <style>
+        /* Базовые стили */
+        * { box-sizing: border-box; }
+        body { margin: 0; font-family: "Manrope", sans-serif; color: #ededed; background: radial-gradient(circle at 12% 0%, #2a2a2a, #121212); min-height: 100vh; }
+        .container { margin: 24px auto; max-width: 800px; padding: 0 20px; }
+        
+        /* Стили для заголовка H1 */
+        h1 {
+            font-size: 3.5rem;
+            font-weight: 900;
+            text-transform: uppercase;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            position: relative;
+            display: inline-block;
+            background: linear-gradient(90deg, #ff8c00, #ffcc00, #ff8c00);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            filter: drop-shadow(0px 5px 15px rgba(255, 140, 0, 0.4));
+        }
 
-            <!-- Фото 3 -->
-            <div class="portfolio-item">
-                <img src="IMG_789.jpg" alt="Работа 3">
-            </div>
-            <!-- Фото  -->
-            <div class="portfolio-item">
-                <img src="IMG_1.jpg" alt="Работа 4">
-            </div>
-            <!-- Фото 5 -->
-            <div class="portfolio-item">
-                <img src="IMG_2.jpg" alt="Работа 5">
-            </div><!-- Фото 6 -->
-            <div class="portfolio-item">
-                <img src="IMG_3.jpg" alt="Работа 6">
-            </div>
-            <!-- Фото 7 -->
-            <div class="portfolio-item">
-                <img src="IMG_4.jpg" alt="Работа 7">
-            </div>
-           <!-- Фото 8 -->
-        <div class="portfolio-item">
-            <img src="IMG_5.jpg" alt="Работа 8">
-        </div>
+        /* Декоративная полоска под заголовком */
+        h1::after {
+            content: "";
+            display: block;
+            width: 80px;
+            height: 5px;
+            background: #ff8c00;
+            margin-top: 15px;
+            border-radius: 5px;
+            box-shadow: 0 0 10px rgba(255, 140, 0, 0.8);
+        }
 
-        <!-- Фото 9 -->
-        <div class="portfolio-item">
-            <img src="IMG_6.jpg" alt="Работа 9">
-        </div>
+        /* Плашка под заголовком */
+        .container > p {
+            font-size: 1.1rem;
+            color: #b0b0b0;
+            margin-top: 10px;
+            margin-bottom: 40px;
+            display: inline-block;
+            background: rgba(255, 140, 0, 0.1);
+            border: 1px solid rgba(255, 140, 0, 0.3);
+            padding: 10px 20px;
+            border-radius: 30px;
+            letter-spacing: 1px;
+        }
 
-        <!-- Фото 10 -->
-        <div class="portfolio-item">
-            <img src="IMG_7.jpg" alt="Работа 10">
-        </div>
+        /* Меню */
+        .navbar { background-color: #111; padding: 15px 0; text-align: center; border-bottom: 2px solid #ff8c00; }
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 20px; }
+        .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 14px; }
+        .navbar a:hover { color: #ff8c00; }
 
-        <!-- Чтобы добавить новое фото, просто скопируй блок выше -->
+        /* --- СЕТКА И КАРТОЧКИ --- */
+        .portfolio-grid {
+            display: grid !important; 
+            grid-template-columns: repeat(3, 1fr) !important; 
+            gap: 15px;
+            margin-top: 20px;
+        }
 
-        </div> <!-- Закрывается сетка portfolio-grid -->
-        </div> <!-- Закрывается container -->
-    </body>
-</html>
+        .portfolio-item {
+            background: #1a1a1a;
+            border-radius: 12px;
+            overflow: hidden;
+            position: relative;
+            transition: all 0.4s ease;
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+        }
+
+        .portfolio-item:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4);
+        }
+
+        .portfolio-item img {
+            width: 100% !important; 
+            aspect-ratio: 4 / 3 !important; 
+            object-fit: cover !important; 
+            display: block;
+            transition: transform 0.5s ease;
+        }
+
+        .portfolio-item:hover img {
+            transform: scale(1.08);
+        }
+        
+        @media (max-width: 768px) {
+            .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
+        }
+        @media (max-width: 480px) {
+            .portfolio-grid { grid-template-columns: 1fr !important; }
+        }
+    </style>
+</head>
+<body>
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="uslugi.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Портфолио</h1>
+        <p>Примеры наших выполненных работ.</p>
+
+        <div class="portfolio-grid">
+            <!-- Фото 1 -->
+            <div class="portfolio-item"><img src="IMG_123.jpg" alt="Работа 1"></div>
+            <!-- Фото 2 -->
+            <div class="portfolio-ite
 
           
