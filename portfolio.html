@@ -52,29 +52,54 @@
         .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; }
         .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 16px; }
         .navbar a:hover { color: #ff8c00; }
-        /* Сетка для портфолио */
+       /* Сетка для портфолио */
 .portfolio-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-    gap: 20px;
+    grid-template-columns: repeat(3, 1fr); /* ВОТ ЭТА СТРОЧКА ДЕЛАЕТ ПО 3 В РЯД */
+    gap: 15px; /* Расстояние между фото */
     margin-top: 20px;
+}
+
+/* Чтобы на телефонах и планшетах фото не были слишком мелкими, добавим адаптив */
+@media (max-width: 768px) {
+    .portfolio-grid {
+        grid-template-columns: repeat(2, 1fr); /* На планшетах по 2 */
+    }
+}
+@media (max-width: 480px) {
+    .portfolio-grid {
+        grid-template-columns: 1fr; /* На телефонах по 1 */
+    }
 }
 
 /* Карточка одной работы */
 .portfolio-item {
     background: #1a1a1a;
-    border-radius: 12px; /* Мягкие, круглые углы */
+    border-radius: 12px; 
     overflow: hidden;
     position: relative; 
-    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); /* Плавная пружинистая анимация */
-    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Легкая тень */
+    transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275); 
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5); /* Тень в обычном состоянии */
 }
 
 /* Эффект при наведении мышки на карточку */
 .portfolio-item:hover {
-    transform: translateY(-8px); /* Карточка подпрыгивает */
-    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.3); /* Оранжевое свечение */
+    transform: translateY(-8px); /* Карточка красиво подпрыгивает вверх */
+    box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4); /* Появляется оранжевое неоновое свечение */
 }
+
+/* Картинка внутри */
+.portfolio-item img {
+    width: 100%;
+    aspect-ratio: 4 / 3; 
+    object-fit: cover; 
+    display: block;
+    transition: transform 0.5s ease; /* Плавный зум картинки */
+}
+
+/* Увеличение картинки при наведении на карточку */
+.portfolio-item:hover img {
+    transform: scale(1.08); /* Картинка внутри чуть п
 
 /* Картинка внутри */
 .portfolio-item img {
