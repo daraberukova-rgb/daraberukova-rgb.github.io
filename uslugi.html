@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Услуги - Электрика везде</title>
+    <style>
+        /* Копируем твои базовые стили, чтобы дизайн совпадал */
+        * { box-sizing: border-box; }
+        body {
+            margin: 0;
+            font-family: "Manrope", system-ui, sans-serif;
+            font-size: 18px;
+            line-height: 1.7;
+            color: #ededed;
+            background: radial-gradient(circle at 12% 0%, rgba(255,140,0,0.15), transparent 40%), #0a0a0a;
+            min-height: 100vh;
+        }
+        h1, h2, h3 { font-weight: 800; }
+        h1 { font-size: 2.6rem; background: linear-gradient(90deg, #ff8c00, #ffcc00); -webkit-background-clip: text; -webkit-text-fill-color: transparent; }
+        .container { margin: 24px auto; max-width: 800px; padding: 0 20px; }
+        .card { padding: 20px; background: #1a1a1a; border-left: 4px solid #ff8c00; border-radius: 8px; margin-bottom: 20px; }
+        
+        /* Стили меню */
+        .navbar { background-color: #111; padding: 15px 0; text-align: center; border-bottom: 2px solid #ff8c00; }
+        .navbar ul { list-style: none; margin: 0; padding: 0; display: flex; justify-content: center; gap: 30px; }
+        .navbar a { color: #fff; text-decoration: none; font-weight: bold; text-transform: uppercase; font-size: 16px; }
+        .navbar a:hover { color: #ff8c00; }
+    </style>
+</head>
+<body>
+    <!-- Меню -->
+    <nav class="navbar">
+        <ul>
+            <li><a href="index.html">Главная</a></li>
+            <li><a href="uslugi.html">Услуги</a></li>
+            <li><a href="portfolio.html">Портфолио</a></li>
+            <li><a href="contacts.html">Контакты</a></li>
+        </ul>
+    </nav>
+
+    <div class="container">
+        <h1>Наши услуги</h1>
+        <p>Мы выполняем полный спектр электромонтажных работ.</p>
+        
+        <div class="card">
+            <h2 style="margin-top:0; color:#ff8c00;">Замена проводки</h2>
+            <p>Полная замена старой проводки на новую, безопасную. Штробление стен, прокладка кабеля.</p>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-top:0; color:#ff8c00;">Установка розеток и выключателей</h2>
+            <p>Монтаж и подключение розеток, выключателей, светильников любой сложности.</p>
+        </div>
+
+        <div class="card">
+            <h2 style="margin-top:0; color:#ff8c00;">Сборка электрощитов</h2>
+            <p>Профессиональная сборка щитов, установка автоматов и УЗО.</p>
+        </div>
+    </div>
+</body>
+</html>
