@@ -111,6 +111,53 @@
     color: #ccc;
     line-height: 1.4;
 }
+    /* --- ПОЛНЫЙ КОД СЕТКИ И КАРТОЧЕК --- */
+    
+    /* Сетка для портфолио */
+    .portfolio-grid {
+        display: grid !important; /* !important заставит браузер точно это применить */
+        grid-template-columns: repeat(3, 1fr) !important; /* 3 колонки */
+        gap: 15px;
+        margin-top: 20px;
+    }
+
+    /* Карточка одной работы */
+    .portfolio-item {
+        background: #1a1a1a;
+        border-radius: 12px;
+        overflow: hidden;
+        position: relative;
+        transition: all 0.4s ease;
+        box-shadow: 0 4px 15px rgba(0, 0, 0, 0.5);
+    }
+
+    /* Эффект при наведении */
+    .portfolio-item:hover {
+        transform: translateY(-8px);
+        box-shadow: 0 12px 25px rgba(255, 140, 0, 0.4);
+    }
+
+    /* Ограничиваем размер самой картинки */
+    .portfolio-item img {
+        width: 100% !important; 
+        aspect-ratio: 4 / 3 !important; /* Принудительно делаем прямоугольной */
+        object-fit: cover !important; /* Обрезаем лишнее */
+        display: block;
+        transition: transform 0.5s ease;
+    }
+
+    /* Увеличение картинки при наведении */
+    .portfolio-item:hover img {
+        transform: scale(1.08);
+    }
+    
+    /* Адаптив для телефонов (чтобы на маленьком экране было 1 или 2 фото) */
+    @media (max-width: 768px) {
+        .portfolio-grid { grid-template-columns: repeat(2, 1fr) !important; }
+    }
+    @media (max-width: 480px) {
+        .portfolio-grid { grid-template-columns: 1fr !important; }
+    }
     </style>
 </head>
 <body>
